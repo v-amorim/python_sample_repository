@@ -39,7 +39,7 @@ graph LR
 
 | File / directory                | Purpose                                                         |
 | ------------------------------- | --------------------------------------------------------------- |
-| `.python-version`               | Pins the Python version (3.12.2); uv installs it on demand.     |
+| `.python-version`               | Pins the Python version (3.14.6); uv installs it on demand.     |
 | `pyproject.toml`                | Project metadata, the `ruff` lint/format config, and dev group. |
 | `uv.lock`                       | Fully resolved dependency lock. See `SETUP.md`.                 |
 | `.pre-commit-config.yaml`       | Shared code standards enforced before each commit.              |
@@ -54,6 +54,7 @@ graph LR
 | ------------------------------------------------- | --------------------------------- | --------------------------- |
 | [uv](https://docs.astral.sh/uv/)                  | Python, venv & dependency manager | `pyproject.toml`, `uv.lock` |
 | [ruff](https://docs.astral.sh/ruff/)              | Linter & formatter                | `[tool.ruff]`               |
+| [ty](https://docs.astral.sh/ty/)                  | Type checker                      | `[tool.ty.environment]`     |
 | [pytest](https://docs.pytest.org/)                | Test runner                       | `[tool.pytest.ini_options]` |
 | [pre-commit](https://pre-commit.com/)             | Git hook orchestration            | `.pre-commit-config.yaml`   |
 | [ipykernel](https://github.com/ipython/ipykernel) | Jupyter notebook kernel           | dev dependency group        |

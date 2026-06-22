@@ -2,7 +2,7 @@
 
 This project uses [uv](https://docs.astral.sh/uv/) to manage the Python version, the virtual environment and dependencies.
 
-The required Python version is pinned in `.python-version` (3.12.2). uv installs it automatically when needed.
+The required Python version is pinned in `.python-version` (3.14.6). uv installs it automatically when needed.
 
 ```powershell
 # Install dependencies (creates .venv and resolves uv.lock)
@@ -11,24 +11,24 @@ The required Python version is pinned in `.python-version` (3.12.2). uv installs
 > uv run pre-commit install
 ```
 
-______________________________________________________________________
+---
 
 ## Make
 
 Common tasks are wrapped in a `Makefile` so they're discoverable and consistent.
-Run `make` (or `make help`) to list the available targets:
+Running `make` with no target runs `check`. The available targets:
 
-| Target         | What it does                                           |
-| -------------- | ------------------------------------------------------ |
-| `make install` | `uv sync` + install pre-commit hooks                   |
-| `make run`     | Run the application entry point                        |
-| `make test`    | Run the test suite                                     |
-| `make lint`    | Lint with ruff                                         |
-| `make format`  | Format with ruff                                       |
-| `make check`   | Lint, check formatting, and run tests                  |
-| `make hooks`   | Run all pre-commit hooks against every file            |
-| `make lock`    | Re-resolve dependencies to the latest allowed versions |
-| `make clean`   | Remove caches and build artifacts                      |
+| Target           | What it does                                           |
+| ---------------- | ------------------------------------------------------ |
+| `make install`   | `uv sync` + install pre-commit hooks                   |
+| `make run`       | Run the application entry point                        |
+| `make test`      | Run the test suite                                     |
+| `make lint`      | Lint with ruff                                         |
+| `make format`    | Format with ruff                                       |
+| `make typecheck` | Type-check with ty                                     |
+| `make check`     | Lint, check formatting, type-check, and run tests      |
+| `make hooks`     | Run all pre-commit hooks against every file            |
+| `make lock`      | Re-resolve dependencies to the latest allowed versions |
 
 ### Installing `make` on Windows
 
@@ -47,7 +47,7 @@ Then run the targets from **PowerShell** or, if you installed via GnuWin32, from
 **Git Bash**. If you'd rather not install `make`, every target maps directly to a
 `uv run ...` command you can copy from the `Makefile`.
 
-______________________________________________________________________
+---
 
 ## Dependencies
 
@@ -66,7 +66,7 @@ Dependencies are declared in `pyproject.toml` under `[project].dependencies` and
 > uv sync
 ```
 
-______________________________________________________________________
+---
 
 ## Running Code
 
@@ -79,7 +79,7 @@ Run code through uv so it uses the project environment without manual activation
 > uv run python -m python_sample_repository.main
 ```
 
-______________________________________________________________________
+---
 
 ## Tests
 
@@ -87,7 +87,7 @@ ______________________________________________________________________
 > uv run pytest
 ```
 
-______________________________________________________________________
+---
 
 ## Pre-commit
 

@@ -3,7 +3,7 @@ name = "python_sample_repository"
 version = "0.1.0"
 description = "Sample Python project template demonstrating GitHub + VSCode setup with uv, ruff and pre-commit"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.14"
 dependencies = []
 
 
@@ -17,6 +17,7 @@ dev = [
     "pre-commit",
     "pytest",
     "ruff",
+    "ty>=0.0.51",
 ]
 
 
@@ -29,12 +30,17 @@ build-backend = "hatchling.build"
     testpaths = ["tests"]
 
 
+[tool.ty.environment]
+    python-version = "3.14"
+    root = ["src"]
+
+
 [tool.ruff]
     exclude = [".venv"]
     extend-include = ["*.ipynb"]
     line-length = 120
     src = ["src"]
-    target-version = "py312"
+    target-version = "py314"
 
 
 [tool.ruff.format]

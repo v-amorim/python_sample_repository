@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := check
 
-.PHONY: install sync run test lint format check hooks lock clean
+.PHONY: install sync run test lint format typecheck check hooks lock
 
 install: ## Create the venv, sync deps, and install pre-commit hooks
 	uv sync
@@ -21,9 +21,13 @@ lint: ## Lint with ruff
 format: ## Format with ruff
 	uv run ruff format .
 
-check: ## Lint, check formatting, and run tests
+typecheck: ## Type-check with ty
+	uv run ty check .
+
+check: ## Lint, check formatting, type-check, and run tests
 	uv run ruff check .
 	uv run ruff format --check .
+	uv run ty check .
 	uv run pytest
 
 hooks: ## Run all pre-commit hooks against every file
