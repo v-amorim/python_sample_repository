@@ -28,6 +28,7 @@
         "ruff.lineLength": 120,
         "files.exclude": { },
         "files.trimTrailingWhitespace": true,
+        "workbench.colorTheme": "Moonlight 🌌",
     },
     "extensions": {
         "recommendations": [
@@ -47,7 +48,8 @@
             "usernamehw.errorlens",
             "visualstudioexptteam.vscodeintellicode",
             "wakatime.vscode-wakatime",
-            "wraith13.unsaved-files-vscode"
+            "wraith13.unsaved-files-vscode",
+            "v-amorim.moonlight-vscode-theme"
         ]
     }
 }

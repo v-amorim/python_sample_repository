@@ -1,3 +1,34 @@
+[project]
+name = "python_sample_repository"
+version = "0.1.0"
+description = "Sample Python project template demonstrating GitHub + VSCode setup with uv, ruff and pre-commit"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+
+[project.scripts]
+python_sample_repository = "python_sample_repository.main:main"
+
+
+[dependency-groups]
+dev = [
+    "ipykernel",
+    "pre-commit",
+    "pytest",
+    "ruff",
+]
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[tool.pytest.ini_options]
+    testpaths = ["tests"]
+
+
 [tool.ruff]
     exclude = [".venv"]
     extend-include = ["*.ipynb"]
@@ -14,6 +45,7 @@
 [tool.ruff.lint.per-file-ignores]
     "__init__.py" = ["E402"]
     "**/{tests,docs,tools}/*" = ["E402"]
+    "**/tests/*" = ["S101"]      # assert is the idiomatic way to write pytest tests
 
 
 [tool.ruff.lint]

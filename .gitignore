@@ -8,6 +8,16 @@
 __pycache__/
 __pypackages__/
 
+# Build artifacts
+build/
+dist/
+wheels/
+*.egg-info
+
+# Linter / type-checker caches
+.ruff_cache/
+.mypy_cache/
+
 # Unit test / coverage reports
 *.cover
 *.py,cover
